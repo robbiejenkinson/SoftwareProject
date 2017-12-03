@@ -22,7 +22,7 @@ barplot(worldTourism$yr2016, mainlab= "Which Country Had Most Visitors To Irelan
 install.packages("highcharter")
 library(highcharter)
 
-#viewing the differnce between '13/'16 of visitors from around the world to Ireland
+#viewing the differnce between '13 & '16 visitors from around the world to Ireland
 hc <- highchart() %>%
   hc_xAxis(categories = worldTourism$Country) %>%
   hc_add_series(name = "2013", data = worldTourism$yr2013) %>%
