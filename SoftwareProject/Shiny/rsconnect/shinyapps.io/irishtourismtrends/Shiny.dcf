@@ -1,0 +1,12 @@
+name: Shiny
+title: Shiny
+username:
+account: irishtourismtrends
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 325304
+bundleId: 1327151
+url: https://irishtourismtrends.shinyapps.io/Shiny/
+when: 1524129689.81306
+asMultiple: FALSE
+asStatic: FALSE

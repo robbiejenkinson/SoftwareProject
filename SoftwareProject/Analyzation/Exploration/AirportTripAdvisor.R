@@ -1,4 +1,4 @@
-read.csv("C:\\Users\\Robbie\\Documents\\College\\GitHub\\SoftwareProjectExcel\\ProjectData\\irishtourismall.csv")
+tour <- read.csv("C:\\Users\\Robbie\\Documents\\College\\GitHub\\SoftwareProjectExcel\\ProjectData\\irishtourismall.csv")
 
 tour$airport <- as.character(tour$airport)
 
@@ -20,7 +20,16 @@ tour$airport <- as.character(tour$airport)
 noAirportAccom <- sum(tourNoAirport$hotel+tourNoAirport$BB+tourNoAirport$specLodge+tourNoAirport$rentals)
 noAirportAct <- sum(tourNoAirport$sights+tourNoAirport$museums+tourNoAirport$foodDrink+tourNoAirport$nightlife+tourNoAirport$nature+tourNoAirport$outdoorAct+tourNoAirport$shopping)
 
-AirportAccomAct <- data.frame(noAirportAct, noAirportAccom, AirportAct, AirportAccom)
+AirportAccomAct <- data.frame(type = c("NoAirportAct", "NoAirportAccom", "AirportAct", "AirportAccom"),
+                              count = c(2558,4577,4399,8404))
+
+save(AirportAccomAct,file="C:\\Users\\Robbie\\Documents\\College\\GitHub\\SoftwareProject\\SavedObjects\\AirportAccomAct.Rdata")
 
 
 boxplot(AirportAccomAct$noAirportAct, AirportAccomAct$AirportAct, AirportAccomAct$noAirportAccom, AirportAccomAct$AirportAccom, names = c("No Aiport Act", "Aiport Act", "No Aiport Accom", "Aiport Accom"))
+
+p <- plot_ly(AirportAccomAct, labels = ~type, values = ~count, type = 'pie') %>%
+  layout(title = 'United States Personal Expenditures by Categories in 1960',
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+p
