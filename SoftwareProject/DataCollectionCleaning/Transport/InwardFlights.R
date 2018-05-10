@@ -1,4 +1,7 @@
-
+install.packages("rmarkdown")
+library(rmarkdown)
+install.packages("knitr")
+library(knitr)
 # NOTE: urls and parameters have changed over time.
 # Data Collected from http://www.cso.ie/px/pxeirestat/Statire/SelectVarVal/Define.asp?maintable=CTM01&PLanguage=0
 # Data re-scraped on line 697
@@ -911,4 +914,15 @@ ForeignAirport <- as.data.frame(tapply(airport$X2007M01+airport$X2007M02+airport
                              airport$X2014M01+airport$X2014M02+airport$X2014M03+airport$X2014M04+airport$X2014M05+airport$X2014M06+airport$X2014M07+airport$X2014M08+airport$X2014M09+airport$X2014M10+airport$X2014M11+airport$X2014M12+
                              airport$X2015M01+airport$X2015M02+airport$X2015M03+airport$X2015M04+airport$X2015M05+airport$X2015M06+airport$X2015M07+airport$X2015M08+airport$X2015M09+airport$X2015M10+airport$X2015M11+airport$X2015M12+
                              airport$X2016M01+airport$X2016M02+airport$X2016M03+airport$X2016M04+airport$X2016M05+airport$X2016M06+airport$X2016M07+airport$X2016M08+airport$X2016M09+airport$X2016M10+airport$X2016M11+airport$X2016M12,list(airport$Foreign.Airport),sum,na.rm=T))
+
+
+library(highcharter)
+
+hc <- highchart() %>%
+  hc_xAxis(categories = flightYear$year) %>%
+  hc_add_series(name = "Inward Passengers Dublin", data = flightyear$Dublin) %>%
+  hc_add_series(name = "Inward Passengers Cork", data = flightyear$Cork) %>%
+  hc_add_series(name = "Inward Passengers Shannon", data = flightyear$Shannon) %>%
+  hc
+
 

@@ -1,0 +1,90 @@
+---
+title: "Flights"
+author: "Robbie Jenkinson"
+date: "1 May 2018"
+output: word_document
+---
+
+
+```
+library(htmltab)
+url <- "http://www.cso.ie/px/pxeirestat/Statire/SelectOut/PxSort.asp?file=20181241639407243069CTM01&PLanguage=0&MainTable=CTM01&MainTablePrestext=Passenger%20Movement%20(Number)&potsize=9297"
+CorkAirport <- htmltab(doc=url, which=1)
+head(CorkAirport)
+
+rownames(CorkAirport) <- c(1:1033)
+
+head(CorkAirport)
+
+CorkAirport$`2017M01` <- as.integer(CorkAirport$`2017M01`)
+CorkAirport$`2017M02` <- as.integer(CorkAirport$`2017M02`)
+CorkAirport$`2017M03` <- as.integer(CorkAirport$`2017M03`)
+CorkAirport$`2017M04` <- as.integer(CorkAirport$`2017M04`)
+CorkAirport$`2017M05` <- as.integer(CorkAirport$`2017M05`)
+CorkAirport$`2017M06` <- as.integer(CorkAirport$`2017M06`)
+CorkAirport$`2017M07` <- as.integer(CorkAirport$`2017M07`)
+CorkAirport$`2017M08` <- as.integer(CorkAirport$`2017M08`)
+CorkAirport$`2017M09` <- as.integer(CorkAirport$`2017M09`)
+
+CorkAirport <- CorkAirport[apply(CorkAirport!=0, 1, all),]
+
+```
+#----------------------
+Trip Advisor Code
+
+```
+#-- Dublin Accommodation --
+
+DublinAccommodation <- read_html("https://www.tripadvisor.ie/Hotels-g186604-County_Dublin-Hotels.html")
+
+DublinAccommodation <- DublinAccommodation %>% html_nodes('.prw_filters_hsx_radio_resp .label') %>% html_text()
+
+DublinAccommodation
+
+```
+
+#-----------------------
+Merge Code
+
+```
+
+IrishAccom <- read.csv(file="C:\\Users\\Robbie\\Documents\\College\\GitHub\\SoftwareProjectExcel\\ProjectData\\IrishAccomodation.csv", header=TRUE, sep=",")
+IrishAct <- read.csv(file="C:\\Users\\Robbie\\Documents\\College\\GitHub\\SoftwareProjectExcel\\ProjectData\\IrishActivities.csv", header=TRUE, sep=",")
+
+IrishTourism <- merge(IrishAccom, IrishAct,by=c("county","prov"))
+
+IrishTourism$X <- NULL
+IrishTourism$id.x <- NULL
+IrishTourism$id.y <- NULL
+
+write.table(IrishTourism, file = "C:\\Users\\Robbie\\Documents\\College\\GitHub\\SoftwareProjectExcel\\ProjectData\\IrishTourismAll.csv")
+
+
+```
+# ------------------------
+
+```
+library(highcharter)
+
+hc <- highchart() %>%
+  hc_xAxis(categories = flightYear$year) %>%
+  hc_add_series(name = "Inward Passengers Dublin", data = flightyear$Dublin) %>%
+  hc_add_series(name = "Inward Passengers Cork", data = flightyear$Cork) %>%
+  hc_add_series(name = "Inward Passengers Shannon", data = flightyear$Shannon) %>%
+hc
+
+```
+
+#---------------------------
+
+```
+    output$plotPieChartForeign2 = renderPlotly({
+      plotPieChartForeign2 <- plot_ly(ForeignMap, labels = ~country, values = ~total, type = 'pie') %>%
+        layout(title = 'Passenger percentage by Country',
+               xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+               yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),margin = list(t = 50, b = 120))
+    })
+    
+```
+
+

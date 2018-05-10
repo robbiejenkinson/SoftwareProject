@@ -1,0 +1,68 @@
+Airport,Numbers,long,lat,country
+London - Heathrow ,10318611,-0.454295,51.47002,Great Britain
+London - Stansted ,7717591,-0.454295,51.47002,Great Britain
+London - Gatwick,6418226,-0.454295,51.47002,Great Britain
+Manchester ,4128664,-0.454295,51.47002,Great Britain
+Paris - Charles De Gaulle ,3672349,2.5384,49.0084 ,France
+Birmingham ,3600359,-0.454295,51.47002,Great Britain
+Amsterdam ,3513441,4.7683,52.3105,Netherlands
+Malaga ,2859797,-3.568,40.4839,Spain
+New York - JFK,2649714,-73.7781,40.6413,USA
+Edinburgh ,2491940,-0.454295,51.47002,Great Britain
+Frankfurt,2334694,13.519,52.3738,Germany
+London - Luton,2168867,-0.454295,51.47002,Great Britain
+Liverpool,2007050,-0.454295,51.47002,Great Britain
+Madrid ,1955221,-3.568,40.4839,Spain
+Lanzarote,1885371,-3.568,40.4839,Spain
+Bristol ,1792517,-0.454295,51.47002,Great Britain
+Faro ,1789836,-7.9595,37.0087,Portugal
+Barcelona ,1527802,-3.568,40.4839,Spain
+Chicago ,1463763,-73.7781,40.6413,USA
+Newark ,1376427,-73.7781,40.6413,USA
+Boston ,1202736,-73.7781,40.6413,USA
+London City ,1138626,-0.454295,51.47002,Great Britain
+Copenhagen ,1115531,12.6415,55.6238,Denmark
+Berlin - Schoenefeld,1111267,13.519,52.3738,Germany
+Leeds Bradford,1077814,-0.454295,51.47002,Great Britain
+Glasgow,1057773,-0.454295,51.47002,Great Britain
+Paris - Beauvais ,1049999,2.5384,49.0084 ,France
+Budapest ,1030002,13.519,52.3738,Hungary
+Derby - East Midlands ,1003047,-0.454295,51.47002,Great Britain
+Newcastle,988303,-0.454295,51.47002,Great Britain
+Munich ,931756,13.519,52.3738,Germany
+Zurich,921305,13.519,52.3738,Switzerland
+Krakow,906082,13.519,52.3738,Poland
+Dusseldorf,896151,13.519,52.3738,Germany
+Alicante,874656,-3.568,40.4839,Spain
+Prague,830008,13.519,52.3738,Czech Republic
+Roma - Ciampino ,809283,13.519,52.3738,Italy
+Roma - Fiumincino ,801992,13.519,52.3738,Italy
+Bergamo - Orio Al Seri ,788296,13.519,52.3738,Italy
+Nice - Cote D'Azur,755622,13.519,52.3738,France
+Frankfurt,732944,13.519,52.3738,Germany
+Riga Intl,711877,13.519,52.3738,Latvia
+Tenerife Sur,701581,13.519,52.3738,Spain
+Lisbon ,693548,13.519,52.3738,Portugal
+Brussels South Charleroi,685372,13.519,52.3738,Belgium
+Las Palmas,663746,13.519,52.3738,Spain
+Warsaw - ,599061,13.519,52.3738,Poland
+Southampton,561514,13.519,52.3738,Great Britain
+Geneva,549553,13.519,52.3738,Switzerland
+Bratislava,543646,13.519,52.3738,Slovakia
+Eindhoven,532921,13.519,52.3738,Netherlands
+Milan - Linate,478317,13.519,52.3738,Italy
+Wroclaw,465230,13.519,52.3738,Poland
+Vienna,455257,13.519,52.3738,Austria
+Fuerteventura,400926,13.519,52.3738,Spain
+Vilnius,388498,13.519,52.3738,Lithuania
+Cardiff,382863,13.519,52.3738,Great Britain
+Stockholm - Arlanda,372069,13.519,52.3738,Sweden
+Lyon - Satolas,343237,13.519,52.3738,France
+Oslo - Gardermoen ,338190,13.519,52.3738,Norway
+Malta,309070,13.519,52.3738,Malta
+Carcassonne,277533,13.519,52.3738,France
+Katowice,255464,13.519,52.3738,Poland
+Aberdeen,250578,13.519,52.3738,Great Britain
+Isle Of Man,174566,13.519,52.3738,Great Britain
+Exeter,152619,13.519,52.3738,Great Britain
+Farnborough,4265,13.519,52.3738,Great Britain
