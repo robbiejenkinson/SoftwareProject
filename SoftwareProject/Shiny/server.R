@@ -13,12 +13,18 @@ library(reshape2)
 library(htmltools)
 library(leaflet)
 
+#SET WORKING DIRECTORY
 #setwd("C:\\Users\\Robbie\\Documents\\College\\GitHub\\SoftwareProjectFinal\\SoftwareProject\\Shiny")
 
 #----------------------------------------------
+#----------------------------------------------
 #All software project dataframes saved as ALLSOFTWAREPROJECTDATA.RData
+#load("C:\\Users\\Robbie\\Documents\\College\\GitHub\\SoftwareProjectFinal\\SoftwareProject\\ALLSOFTWAREPROJECTDATA.Rdata")
+#----------------------------------------------
 #----------------------------------------------
 
+
+# DATA LOADED SEPARATELY
 load("./data/AirportMonths.Rdata")
 flightsMap <- read.csv("./data/InwardFlightsMap.csv")
 flightYear <- read.csv("./data/FlightsYears.csv")
@@ -310,7 +316,7 @@ shinyServer(
     })
     
     output$plotLineCountry = renderPlotly({
-      plotLineCountry <- plot_ly(tourists, x = ~country, y = ~tourists, type = 'bar', name = 'Country') %>%
+      plotLineCountry <- plot_ly(tourists, x = ~country, y = ~tourists, type = 'bar', name = 'Tourists') %>%
         add_trace(y = ~exp, name = 'Expenditure') %>%
         layout(yaxis = list(title = "Visitors ('000) & Expenditure (mil)"), barmode = 'group', title = "Nationality & Expenditure ")
     })

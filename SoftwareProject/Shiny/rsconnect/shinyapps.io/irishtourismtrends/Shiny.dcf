@@ -5,8 +5,8 @@ account: irishtourismtrends
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 325304
-bundleId: 1366493
+bundleId: 1368366
 url: https://irishtourismtrends.shinyapps.io/Shiny/
-when: 1525949793.3594
+when: 1526034119.00998
 asMultiple: FALSE
 asStatic: FALSE

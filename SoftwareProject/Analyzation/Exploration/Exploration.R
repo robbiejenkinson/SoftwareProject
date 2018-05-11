@@ -4,51 +4,6 @@ kruskal <- read.csv("./flights/kruskal.csv")
 
 # SOFTWARE PROJECT DATA EXPLORATION -----------------------------------------------
 
-# null hypothesis = Activities data are normal
-# null hypothesis = Accomodation data are normal
-
-# alternate hypothesis = Activities data are not normal
-# alternate hypothesis = Accomodation data are not normal
-
-
-# Shapiro-Wilk normality test for activities
-shapiro.test(Act$total) # => p = 6.888e-06
-# Shapiro-Wilk normality test for accomodation
-shapiro.test(tourism$totalAccom) # => p = 1.266e-05
-
-wilcox.test(Act$total,tourism$totalAccom) # w = 356, p-value = 0.0368
-
-
-# NULL HYPOTHESIS THAT DATA ARE NORMAL FOR BOTH ACTIVITIES & ACCOMODATION REJECTED. 
-
-# QQPLOTs
-install.packages("ggpubr")
-library(ggpubr)
-# mpg
-ggqqplot(Act$total, ylab = "Activities")
-# wt
-ggqqplot(tourism$totalAccom, ylab = "Accomodation")
-
-# HISTOGRAMS
-hist(Act$total, ylab = "Activities")
-hist(tourism$total, ylab = "Accomodation")
-
-
-# CORRELATION TESTING
-cor(Act$total,tourism$total, method="pearson")
-cor(Act$total,tourism$total, method="pearson")
-cor(Act$total,tourism$total, method="kendall")
-cor(Act$total,tourism$total, method="spearman")
-
-# THERE IS NO CORRELATION BETWEEN ACTIVITIES AND ACCOMODATION
-
-plot(Act$total, tourism$totalAccom)
-cor(chirp_nums, temp_f)
-#
-fit <- lm(Act$total ~ tourism$total)
-abline(fit)
-summary(fit)
-
 #--------------------------------------------------------
 #--------------------------------------------------------
 
@@ -136,47 +91,6 @@ ts.plot(newts)
 #----------------------------------------------------------
 #----------------------------------------------------------
 
-# NORMALITY TESTS
-
-shapiro.test(IrishTourismAll$outdoorAct) # Non-normal distribution
-shapiro.test(IrishTourismAll$BB) # Non-normal distribution
-shapiro.test(IrishTourismAll$specLodge) # Non-normal distribution
-shapiro.test(IrishTourismAll$hotel) # Non-normal distribution
-shapiro.test(IrishTourismAll$museums) # Non-normal distribution
-
-
-wilcox.test(IrishTourismAll$outdoorAct,IrishTourismAll$BB) # w = 212.5, p-value = 1.355e-05
-# significant statistical difference.
-
-wilcox.test(IrishTourismAll$outdoorAct,IrishTourismAll$specLodge) # w = 452, p-value = 0.4242
-# no so significant statistical difference.
-
-wilcox.test(IrishTourismAll$hotel,IrishTourismAll$museums) # w = 767, p-value = 0.0006249
-# significant statistical difference.
-
-# linear regression Accomodation and Activities BB & Outdoor Act.
-
-linearModel = lm(BB~outdoorAct, data=IrishTourismAll)
-linearModel
-
-Pred <- 10.905 + 2.916*187
-Pred
-
-# linear regression Accomodation and Activities SpecLodge & Outdoor Act.
-
-linearModel = lm(specLodge~outdoorAct, data=IrishTourismAll)
-linearModel
-
-Pred <- 4.218 + 1.044*187
-Pred
-
-# linear regression Accomodation and Activities SpecLodge & Outdoor Act.
-
-linearModel = lm(hotel~museums, data=IrishTourismAll)
-linearModel
-
-Pred <- 5.993 + 1.881*95
-Pred
 
 # --------------------------------------------------------------------------
 #---------------------------------------------------------------------------
